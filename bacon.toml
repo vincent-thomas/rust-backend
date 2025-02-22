@@ -1,0 +1,37 @@
+default_job = "check"
+env.CARGO_TERM_COLOR = "always"
+
+[jobs.check]
+command = ["cargo", "check"]
+need_stdout = false
+
+# Run clippy on the default target
+[jobs.clippy]
+command = ["cargo", "clippy"]
+need_stdout = false
+
+[jobs.test]
+command = ["cargo", "test"]
+need_stdout = true
+
+[jobs.doc]
+command = ["cargo", "doc", "--no-deps"]
+need_stdout = false
+
+[jobs.run]
+command = [ "cargo", "run" ]
+need_stdout = true
+allow_warnings = true
+background = false
+on_change_strategy = "kill_then_restart"
+
+# Call it as
+#    bacon ex -- my-example
+[jobs.ex]
+command = ["cargo", "run", "--example"]
+need_stdout = true
+allow_warnings = true
+
+[keybindings]
+c = "job:clippy-all"
+r = "job:run"
