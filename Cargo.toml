@@ -1,10 +1,10 @@
+[dependencies]
+axum = "0.8.1"
+dotenvy = "0.15.7"
+sqlx = {version = "0.8.3", features = ["postgres", "runtime-tokio", "tls-rustls-aws-lc-rs", "time"]}
+tokio = {version = "1.43.0", features = ["rt", "rt-multi-thread", "macros"]}
+
 [package]
 name = "nice-project"
 version = "0.1.0"
 edition = "2021"
-
-[dependencies]
-axum = "0.8.1"
-dotenvy = "0.15.7"
-sqlx = { version = "0.8.3", features = ["postgres", "runtime-tokio", "tls-rustls-aws-lc-rs", "time"] }
-tokio = { version = "1.43.0", features = ["rt", "rt-multi-thread", "macros"] }

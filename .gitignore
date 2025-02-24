@@ -2,3 +2,4 @@
 .env
 db
 .direnv
+.pre-commit-config*
